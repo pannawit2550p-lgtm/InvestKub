@@ -2,15 +2,15 @@ import { describe, expect, it } from 'vitest';
 import { compareLeaderboardEntries, makePortfolioAllocations, toPublicLeaderboardEntry } from './calculations';
 
 describe('compareLeaderboardEntries', () => {
-  it('sorts by return, then portfolio value, then older start date', () => {
+  it('sorts by total portfolio value, then return and older start date', () => {
     const entries = [
-      { public_id: 'd', total_pl_pct: 4, portfolio_value: 105, session_started_at: '2026-01-02' },
-      { public_id: 'c', total_pl_pct: 4, portfolio_value: 110, session_started_at: '2026-01-02' },
+      { public_id: 'd', total_pl_pct: 99, portfolio_value: 105, session_started_at: '2026-01-02' },
+      { public_id: 'c', total_pl_pct: 6, portfolio_value: 110, session_started_at: '2026-01-02' },
       { public_id: 'b', total_pl_pct: 4, portfolio_value: 110, session_started_at: '2026-01-01' },
       { public_id: 'a', total_pl_pct: 5, portfolio_value: 90, session_started_at: '2026-02-01' },
     ];
 
-    expect(entries.sort(compareLeaderboardEntries).map((entry) => entry.public_id)).toEqual(['a', 'b', 'c', 'd']);
+    expect(entries.sort(compareLeaderboardEntries).map((entry) => entry.public_id)).toEqual(['c', 'b', 'd', 'a']);
   });
 });
 

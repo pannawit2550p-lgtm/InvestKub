@@ -68,7 +68,7 @@ describe('server leaderboard snapshot integration', () => {
     expect(mocks.fullRead).toHaveBeenCalledTimes(1);
     expect(mocks.holdingsRead).toHaveBeenCalledTimes(1);
     expect(mocks.visibilityRead).toHaveBeenCalledTimes(4);
-    expect(mocks.cacheOptions).toHaveBeenCalledWith({ revalidate: 60, tags: ['leaderboard-snapshot-v1'] });
+    expect(mocks.cacheOptions).toHaveBeenCalledWith({ revalidate: 60, tags: ['leaderboard-snapshot-v2'] });
     expect(JSON.stringify(a)).not.toMatch(/authId|avatar_storage_path|cash_balance/);
   });
 

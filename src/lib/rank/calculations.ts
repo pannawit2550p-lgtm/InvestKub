@@ -48,8 +48,8 @@ export function toPublicLeaderboardEntry(leader: PublicLeaderboardEntry): Public
 }
 
 export function compareLeaderboardEntries(a: LeaderboardSortEntry, b: LeaderboardSortEntry): number {
-  return b.total_pl_pct - a.total_pl_pct
-    || b.portfolio_value - a.portfolio_value
+  return b.portfolio_value - a.portfolio_value
+    || b.total_pl_pct - a.total_pl_pct
     || a.session_started_at.localeCompare(b.session_started_at)
     || a.public_id.localeCompare(b.public_id);
 }

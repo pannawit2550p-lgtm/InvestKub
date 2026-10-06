@@ -2,7 +2,7 @@ import 'server-only';
 
 import { revalidateTag } from 'next/cache';
 
-export const LEADERBOARD_CACHE_TAG = 'leaderboard-snapshot-v1';
+export const LEADERBOARD_CACHE_TAG = 'leaderboard-snapshot-v2';
 export const LEADERBOARD_CACHE_SECONDS = 60;
 
 // Deduplicate concurrent cache misses within this server instance. The stored

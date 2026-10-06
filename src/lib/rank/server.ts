@@ -184,7 +184,7 @@ async function publicEntries(admin: ReturnType<typeof createAdminClient>, leader
 // expensive portfolio valuation/sorting is cached; permission checks are not.
 const loadCachedLeaders = singleFlight(unstable_cache(
   async () => (await loadInternalLeaders()).leaders,
-  ['leaderboard-snapshot-v1'],
+  ['leaderboard-snapshot-v2'],
   { revalidate: LEADERBOARD_CACHE_SECONDS, tags: [LEADERBOARD_CACHE_TAG] },
 ));
 
