@@ -1,0 +1,9 @@
+{
+  "crons": [
+    { "path": "/api/cron/sync-symbols", "schedule": "0 0 * * 0" },
+    { "path": "/api/cron/sync-logos", "schedule": "*/5 * * * *" },
+    { "path": "/api/cron/refresh-market-data", "schedule": "* * * * *" },
+    { "path": "/api/cron/snapshot", "schedule": "30 21 * * 1-5" },
+    { "path": "/api/cron/process-limit-orders", "schedule": "*/5 * * * 1-5" }
+  ]
+}
